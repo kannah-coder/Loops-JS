@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Doubling with Loops</title>
+</head>
+<body>
+    <script>
+        const originalArr = [1, 1, 3];
+
+        // Regular for loop
+        let arr1 = [...originalArr]; // clone array
+        for (let i = 0; i < arr1.length; i++) {
+            arr1[i] *= 2;
+        }
+        console.log("For loop:", arr1);
+
+        //  2. for...of loop
+        let arr2 = [];
+        for (let num of originalArr) {
+            arr2.push(num * 2);
+        }
+        console.log("For...of loop:", arr2);
+
+        // 3. for...in loop
+        let arr3 = [...originalArr];
+        for (let index in arr3) {
+            arr3[index] *= 2;
+        }
+        console.log("For...in loop:", arr3);
+
+        //  4. while loop  
+        let arr4 = [...originalArr];
+        let i = 0;
+        while (i < arr4.length) {
+            arr4[i] *= 2;
+            i++;
+        }
+        console.log("While loop:", arr4);
+
+        //   5. do...while loop  
+        let arr5 = [...originalArr];
+        let j = 0;
+        if (arr5.length > 0) { // check if array is not empty
+            do {
+                arr5[j] *= 2;
+                j++;
+            } while (j < arr5.length);
+        }
+        console.log("Do...while loop:", arr5);
+
+    </script>
+</body>
+</html>
